@@ -1,6 +1,6 @@
 #!/bin/bash
 
-aws iam list-users --query "Users[].[UserName]" --output text | while read User; do
+/usr/local/bin/aws iam list-users --query "Users[].[UserName]" --output text | while read User; do
   if id -u "$User" >/dev/null 2>&1; then
     echo "$User exists"
   else
